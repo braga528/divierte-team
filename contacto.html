@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Divierte-team temporada</title>
+    <meta charset="utf-8">
+    <title>Divierte-team || Contacto</title>
 
-  <!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <!--Import materialize.css-->
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--Import materialize.css-->
 
-  <!-- Compiled and minified JavaScript -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans+Condensed:300" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans+Condensed:300" rel="stylesheet">
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <style>
-    .indicators {
-      display: none;
-    }
-
-    .opacity {
-      background-color: rgb(43, 43, 43);
-      opacity: 0.8; /* Opacidad 60% */
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-    }
-    #sidenav-overlay{
-      z-index: 0;
-    }
-    html{
-      font-family: 'Open Sans Condensed', sans-serif;
-      font-family: 'Comfortaa', cursive;
-    }
-  </style>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        html {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: 'Comfortaa', cursive;
+        }
+    </style>
 </head>
 
 <body>
+<script>
+    $(document).ready(function () {
+        $('.carousel.carousel-slider').carousel({fullWidth: true});
+        $('.parallax').parallax();
+        $(".button-collapse").sideNav();
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15 // Creates a dropdown of 15 years to control year
+        });
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+    });
+
+</script>
+<script>
+    $("#contact-form").on("submit", function (ev) {
+        ev.preventDefault();
+
+        sendForm($(this));
+
+        return false;
+    });
+    function sendForm($form) {
+        $.ajax({
+            url: "https://formspree.io/braga528@gmail.com",
+            method: "POST",
+            data: $form.formObject(),
+            dataType: "json",
+            success: function () {
+                modal("Tu mensaje ha sido enviado, en breve nos podremos en contacto contigo. Nos pondremos en contacto por via correo electrónico o por celular")
+            }
+        });
+    }
+</script>
 <script>
     function initMap() {
         var myLatLng = {lat: 21.0144315, lng: -89.588991};
@@ -59,179 +80,209 @@
             map: map,
             title: 'SORTIS'
         });
-
     }
-
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPiyonqnGiD7b3TiXUO44-j9-NATbT8vI&callback=initMap"
         async defer></script>
 <div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper #fb8c00 orange darken-1">
-      <a href="index.html" class="brand-logo"><img style="width: 60%; padding-left: 20px" class="valign" src="img/nav-logo.png"></a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a id="inicio-btn" href="index.html">INICIO</a></li>
+    <nav>
+        <div class="nav-wrapper #fb8c00 orange darken-1">
+            <a href="index.html" class="brand-logo"><img style="width: 60%; padding-left: 20px" class="valign"
+                                                         src="img/nav-logo.png"></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a id="inicio-btn" href="index.html">INICIO</a></li>
 
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="index.html">INICIO</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="index.html">INICIO</a></li>
 
-      </ul>
-    </div>
-  </nav>
+            </ul>
+        </div>
+    </nav>
 </div>
 
-<section id="CONTACTO"  style=" padding-bottom: 100px; padding-top: 50px">
-  <div class="container">
-    <h3 class="center" style="padding-bottom: 50px">Conctactanos</h3>
-    <div class="row">
-      <div class="col s12 l6 ">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="img/contact.png">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Contactanos<i class="material-icons right">more_vert</i></span>
+<section id="CONTACTO">
+    <div class="container">
+        <h3 class="center">Cotiza tu evento</h3>
 
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Contacto<i class="material-icons right">close</i></span>
-            <form class="col s12 m12 l12" action="https://formspree.io/braga528@gmail.com", method="POST">
-              <div class="row">
-                <div class="input-field col s6">
-                  <input name="name" id="first_name" type="text" class="validate" required="">
-                  <label for="first_name">Nombre</label>
-                </div>
-                <div class="input-field col s6">
-                  <input name="last_name" id="last_name" type="text" class="validate" required="">
-                  <label for="last_name">Apellido</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input name="email" id="email" type="email" class="validate" required="">
-                  <label for="email">Correo electrónico</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <textarea name="text" id="textarea1" class="materialize-textarea" length="500" required=""></textarea>
-                  <label for="textarea1">Mensaje</label>
-                </div>
-              </div>
-              <button class="btn waves-effect #b71c1c red darken-4 center-align" type="submit" name="action">Enviar
-                <i class="material-icons right">send</i>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m6 l6 ">
-        <div class="card">
-          <div class="card-image">
-            <div id="location">
-              <div id="map" style="width: 437px; height: 435px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card-panel #f5f5f5 grey lighten-4 z-depth-4">
+                    <div class="row">
+                        <div class="col s12 l12 ">
+                            <div class="card #fb8c00 orange darken-1">
+                                <form class="col s12 m12 l12" action="https://formspree.io/braga528@gmail.com" method="POST"
+                                      id="contact-form" notvalidate>
+                                    <div class="row">
+                                        <div class="col s12 m6 l6">
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input name="Nombre" id="first_name" type="text" class="validate"
+                                                           required="">
+                                                    <label for="first_name">Nombre</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input name="Apellido" id="last_name" type="text" class="validate"
+                                                           required="">
+                                                    <label for="last_name">Apellido</label>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="">
+                                                <div class="input-field col s12">
+                                                    <input name="Correo" id="email" type="email" class="validate" required="">
+                                                    <label for="email">Correo electrónico</label>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-top: 15px">
+                                                <div class="input-field col s12">
+                                                    <input name="Celular" id="phone" type="tel" class="validate" required="">
+                                                    <label for="phone">Número Telefónico</label>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-top: 10px">
+                                                <div class="input-field col s12">
+                                            <textarea name="Mensaje" id="textarea1" class="materialize-textarea"
+                                                      length="500" required=""></textarea>
+                                                    <label for="textarea1">Mensaje</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s12 m6 l6">
+                                            <div class="row">
+                                                <div class="input-field col s12 m12 l12" name="Tipo-fiesta" required="">
+                                                    <select multiple>
+                                                        <option disabled>Seleccione uno</option>
+                                                        <option value="1">Fiesta infantil</option>
+                                                        <option value="2">Baño de Piscina</option>
+                                                        <option value="3">Pijamada</option>
+                                                        <option value="4">Primera comunión</option>
+                                                        <option value="5">Reunión Familiar</option>
+                                                        <option value="6">Feria</option>
+                                                        <option value="7">XV años</option>
+                                                        <option value="8">Rallys</option>
+                                                        <option value="9">Baby shower</option>
+                                                        <option value="10">Despedida de soltera</option>
+                                                        <option value="11">Halloween</option>
+                                                        <option value="12">Posadas</option>
+                                                        <option value="13">Cursos de verano y primavera</option>
+                                                        <option value="14">Fines de curso</option>
+                                                    </select>
+                                                    <label>Tipo de Fiesta</label>
+                                                </div>
+                                                <div class="input-field col s12 m12 l12">
+                                                    <input name="Cumpleañero" id="cumpleañero" type="text" class="validate"
+                                                           required="">
+                                                    <label for="cumpleañero">Nombre del festejado</label>
+                                                </div>
 
-              </div>
+                                                <div class="input-field col s12">
+                                                    <input name="Fecha-evento" id="date" type="date" class="validate"
+                                                           required="">
+                                                    <label for="date"></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s4">
+                                                    <input name="Num-niños" id="kid" type="number" class="validate" required="">
+                                                    <label for="kid">Cant. Niños</label>
+                                                </div>
+                                                <div class="input-field col s4">
+                                                    <input name="Num-jovenes" id="teen" type="number" class="validate"
+                                                           required="">
+                                                    <label for="teen">Cant. Jovenes</label>
+                                                </div>
+                                                <div class="input-field col s4">
+                                                    <input name="Num-adultos" id="adult" type="number" class="validate"
+                                                           required="">
+                                                    <label for="adult">Cant. Adultos</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12 m6 l6">
+                                                    <input name="Lugar-evento" id="place" type="text" class="validate"
+                                                           required="">
+                                                    <label for="place">Lugar del evento</label>
+                                                </div>
+                                                <div class="input-field col s12 m6 l6">
+                                                    <input name="Edades" id="ages" type="text" class="validate" required="">
+                                                    <label for="ages">Aproximado de edades</label>
+                                                </div>
+                                            </div>
+
+                                            <button class="btn waves-effect right #b71c1c red darken-4 center-align" type="submit"
+                                                    name="action">Enviar
+                                                <i class="material-icons right">send</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="card-content">
-            <p><span>Dirección:</span> Calle 9 entre 20 y 18, Calle 12 188, Residencial Cámara de Comercio Nte., 97133 Mérida, Yuc.</p>
-          </div>
         </div>
-      </div>
+
+
+
+        <div class="col s12 m6 l12 ">
+            <div class="card z-depth-4">
+                <div class="card-image">
+                    <div id="location">
+                        <div id="map" style="width: 896px; height: 435px;">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p><span>Dirección:</span> Calle 9 entre 20 y 18, Calle 12 188, Residencial Cámara de Comercio
+                        Nte., 97133 Mérida, Yuc.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    </div>
 </section>
 
 
 <footer class="page-footer #fb8c00 orange darken-1">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text"><img style="width: 50%" src="img/nav-logo.png"></h5>
-        <p class="grey-text text-lighten-4">Somos una empresa dedicada a la animación de las fiestas infantiles con un equipo dinámico, creativo y bien preparado para divertir y entretener a niños de todas las edades.
-          Vamos a salones, casas particulares, jardines y animamos tu fiesta.</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
-        <ul>
-          <li><a class="white-text center-align valign-wrapper" href="https://www.facebook.com/divierte.team/?fref=ts"><i
-                  class="fa fa-facebook-official fa-3x" aria-hidden="true"></i>  FACEBOOK</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Aviso de privacidad</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
     <div class="container">
-      © 2017 Copyright <a target="_blank" class="white-text" href="https://www.facebook.com/braga528">Joel Braga</a>
-
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text"><img style="width: 50%" src="img/logo%201-05.png"></h5>
+                <p class="grey-text text-lighten-4">Somos una empresa dedicada a la animación de las fiestas infantiles
+                    con un equipo dinámico, creativo y bien preparado para divertir y entretener a niños de todas las
+                    edades.
+                    Vamos a salones, casas particulares, jardines y animamos tu fiesta.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="white-text center-align valign-wrapper"
+                           href="https://www.facebook.com/divierte.team/?fref=ts"> <i
+                            class="fa fa-facebook-official fa-2x" aria-hidden="true"></i> FACEBOOK</a></li>
+                    <li class="white-text"><a href="#" class="white-text"></a> <i class="fa fa-phone fa-2x white-text"
+                                                                                  aria-hidden="true"></i>9991 - 29 - 80
+                        - 25
+                    </li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Aviso de privacidad</a></li>
+                    <li><a class="white-text center-align valign-wrapper">#SiempreListos</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2017 Copyright <a target="_blank" class="white-text" href="https://www.facebook.com/braga528">Divierte-team</a>
+
+        </div>
+    </div>
 </footer>
 
 
 <!--Import jQuery before materialize.js-->
-<script>
-    $(document).ready(function(){
-        $('.carousel.carousel-slider').carousel({fullWidth: true});
-        $('.parallax').parallax();
-        $(".button-collapse").sideNav();
-    });
 
-</script>
-<script>
-    $(document).ready(function () {
-        $('.carousel').carousel();
-        var scroll_start = 0;
-        var startchange = $('.nav-color');
-        var offset = startchange.offset();
-        $(document).scroll(function () {
-            scroll_start = $(this).scrollTop();
-            if (scroll_start > offset.top) {
-                console.log("color change");
-                $('.nav-color').css('background-color', 'rgb(0,121,107)');
-            } else {
-                $('.nav-color').css('background-color', 'transparent');
-            }
-        });
-    });
-</script>
-<script>
-    $("#inicio-btn").click(function () {
-        $('html, body').animate({
-            scrollTop: $("#inicio").offset().top - 64
-        }, 2000);
-    });
-    $("#productos-btn").click(function () {
-        $('html, body').animate({
-            scrollTop: $("#PRODUCTOS").offset().top - 64
-        }, 2000);
-    });
-    $("#promociones-btn").click(function () {
-        $('html, body').animate({
-            scrollTop: $("#PROMOCIONES").offset().top - 64
-        }, 2000);
-    });
-    $("#contacto-btn").click(function () {
-        $('html, body').animate({
-            scrollTop: $("#CONTACTO").offset().top - 64
-        }, 2000);
-    });
 
-</script>
-<script>
-    setTimeout(function () {
-        changepick();
-    }, 3000);
-    function changepick() {
-        $('.carousel-item').carousel('next');
-        setTimeout(function () {
-            changepick();
-        }, 3000);
-    }
-</script>
 </body>
 </html>

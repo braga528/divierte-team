@@ -76,22 +76,25 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text"><img style="width: 50%" src="img/nav-logo.png"></h5>
-                <p class="grey-text text-lighten-4">Lorem lipsum bla bla bla</p>
+                <h5 class="white-text"><img style="width: 50%" src="img/logo%201-05.png"></h5>
+                <p class="grey-text text-lighten-4">Somos una empresa dedicada a la animación de las fiestas infantiles con un equipo dinámico, creativo y bien preparado para divertir y entretener a niños de todas las edades.
+                    Vamos a salones, casas particulares, jardines y animamos tu fiesta.</p>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                    <li><a class="white-text center-align valign-wrapper" href="https://www.facebook.com/divierte.team/?fref=ts"><i
-                            class="fa fa-facebook-official fa-3x" aria-hidden="true"></i>  FACEBOOK</a></li>
+                    <li> <a class="white-text center-align valign-wrapper" href="https://www.facebook.com/divierte.team/?fref=ts"> <i
+                            class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>  FACEBOOK</a></li>
+                    <li class="white-text"><a href="#" class="white-text"></a> <i class="fa fa-phone fa-2x white-text" aria-hidden="true"></i>9991 - 29 - 80 - 25</li>
                     <li><a class="grey-text text-lighten-3" href="#!">Aviso de privacidad</a></li>
+                    <li><a class="white-text center-align valign-wrapper">#SiempreListos</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="footer-copyright">
         <div class="container">
-            © 2017 Copyright <a target="_blank" class="white-text" href="https://www.facebook.com/braga528">Joel Braga</a>
+            © 2017 Copyright <a target="_blank" class="white-text" href="https://www.facebook.com/braga528">Divierte-team</a>
 
         </div>
     </div>
@@ -107,56 +110,6 @@
     });
 
 </script>
-<script>
-    $(document).ready(function () {
-        $('.carousel').carousel();
-        var scroll_start = 0;
-        var startchange = $('.nav-color');
-        var offset = startchange.offset();
-        $(document).scroll(function () {
-            scroll_start = $(this).scrollTop();
-            if (scroll_start > offset.top) {
-                console.log("color change");
-                $('.nav-color').css('background-color', 'rgb(0,121,107)');
-            } else {
-                $('.nav-color').css('background-color', 'transparent');
-            }
-        });
-    });
-</script>
-<script>
-    $("#inicio-btn").click(function () {
-        $('html, body').animate({
-            scrollTop: $("#inicio").offset().top - 64
-        }, 2000);
-    });
-    $("#productos-btn").click(function () {
-        $('html, body').animate({
-            scrollTop: $("#PRODUCTOS").offset().top - 64
-        }, 2000);
-    });
-    $("#promociones-btn").click(function () {
-        $('html, body').animate({
-            scrollTop: $("#PROMOCIONES").offset().top - 64
-        }, 2000);
-    });
-    $("#contacto-btn").click(function () {
-        $('html, body').animate({
-            scrollTop: $("#CONTACTO").offset().top - 64
-        }, 2000);
-    });
 
-</script>
-<script>
-    setTimeout(function () {
-        changepick();
-    }, 3000);
-    function changepick() {
-        $('.carousel-item').carousel('next');
-        setTimeout(function () {
-            changepick();
-        }, 3000);
-    }
-</script>
 </body>
 </html>
