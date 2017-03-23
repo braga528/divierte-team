@@ -47,24 +47,27 @@
 
 </script>
 <script>
-    $("#contact-form").on("submit", function (ev) {
-        ev.preventDefault();
-
-        sendForm($(this));
-
-        return false;
-    });
-    function sendForm($form) {
+    var $contactForm = $('#contact-form');
+    $contactForm.submit(function(e) {
+        e.preventDefault();
         $.ajax({
-            url: "https://formspree.io/braga528@gmail.com",
-            method: "POST",
-            data: $form.formObject(),
-            dataType: "json",
-            success: function () {
-                modal("Tu mensaje ha sido enviado, en breve nos podremos en contacto contigo. Nos pondremos en contacto por via correo electrónico o por celular")
+            url: '//formspree.io/braga528@gmail.com',
+            method: 'POST',
+            data: $(this).serialize(),
+            dataType: 'json',
+            beforeSend: function() {
+                $contactForm.append('<div class="alert alert--loading">Sending message…</div>');
+            },
+            success: function(data) {
+                $contactForm.find('.alert--loading').hide();
+                $contactForm.append('<div class="alert alert--success">Message sent!</div>');
+            },
+            error: function(err) {
+                $contactForm.find('.alert--loading').hide();
+                $contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
             }
         });
-    }
+    });
 </script>
 <script>
     function initMap() {
@@ -87,8 +90,8 @@
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper #fb8c00 orange darken-1">
-            <a href="index.html" class="brand-logo"><img style="width: 60%; padding-left: 20px" class="valign"
-                                                         src="img/nav-logo.png"></a>
+            <a href="index.html" class="brand-logo"><img style="width: 20%; padding-left: 20px" class="valign"
+                                                         src="img/logo%201-05.png"></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a id="inicio-btn" href="index.html">INICIO</a></li>
@@ -113,7 +116,7 @@
                         <div class="col s12 l12 ">
                             <div class="card #fb8c00 orange darken-1">
                                 <form class="col s12 m12 l12" action="https://formspree.io/braga528@gmail.com" method="POST"
-                                      id="contact-form" notvalidate>
+                                      id="contact-form" datatype="json" notvalidate>
                                     <div class="row">
                                         <div class="col s12 m6 l6">
                                             <div class="row">
@@ -209,6 +212,15 @@
                                                     <label for="ages">Aproximado de edades</label>
                                                 </div>
                                             </div>
+
+
+                                            <input  class="is-hidden" type="hidden" name="_gotcha">
+                                            <input type="hidden" name="_subject" value="Subject">
+                                            <input type="hidden" name="_cc" value="braga528@gmail.com">
+
+
+
+
 
                                             <button class="btn waves-effect right #b71c1c red darken-4 center-align" type="submit"
                                                     name="action">Enviar

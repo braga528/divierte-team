@@ -30,22 +30,17 @@
         #sidenav-overlay{
             z-index: 0;
         }
-
         html{
             font-family: 'Open Sans Condensed', sans-serif;
             font-family: 'Comfortaa', cursive;
-
         }
-
         .navbar-default {
             background: #fb8c00;
-
             transition: 0.2s all linear;
         }
-
         .navbar-default.change-color {
             background-color: #fb8c00;
-            z-index: 9000;
+            z-index: 9;
         }
         .hidden{
             display: none; !important;
@@ -62,20 +57,20 @@
         $(".button-collapse").sideNav();
     });
 </script>
-<script>
-    jQuery(document).ready(function($) {
-        $(window).scroll(function() {
-            var scrollPos = $(window).scrollTop(),
-                navbar = $('.navbar-default');
+<!--<script>-->
+    <!--jQuery(document).ready(function($) {-->
+        <!--$(window).scroll(function() {-->
+            <!--var scrollPos = $(window).scrollTop(),-->
+                <!--navbar = $('.navbar-default');-->
 
-            if (scrollPos > 2) {
-                navbar.addClass('change-color');
-            } else {
-                navbar.removeClass('change-color');
-            }
-        });
-    });
-</script>
+            <!--if (scrollPos > 2) {-->
+                <!--navbar.addClass('change-color');-->
+            <!--} else {-->
+                <!--navbar.removeClass('change-color');-->
+            <!--}-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
 <script>
     setTimeout(function () {
         changepick();
@@ -114,36 +109,17 @@
 
 
 <a href="index.html" class="brand-logo hide-on-small-only hide-on-med-only"><img style="position: absolute; width: 20%; padding-left: 20px; z-index: 2; top: 50px; left: 20px" class="valign" src="img/logo%201-05.png"></a>
-<!--<nav  style="z-index: 10;" class="hide-on-large-only navbar-default #fb8c00 orange darken-1" >-->
-    <!--<div class="nav-wrapper " >-->
-        <!--<a href="#!" class="brand-logo"><img style=" width: 60%;  padding-left: 30px;"  src="img/nav-logo.png"></a>-->
-        <!--<a href="#" data-activates="mobile-demo" style="z-index: 100000; width: 10px; height: 100px;" class="button-collapse"><i class="material-icons">menu</i></a>-->
-        <!--<ul class="right hide-on-med-and-down">-->
-            <!--<li><a id="inicio" href="#">INICIO</a></li>-->
-            <!--<li><a id="productos" href="#PRODUCTOS">EQUIPO</a></li>-->
-            <!--<li><a id="paquetes" href="paquetes.html">SERVICIOS</a></li>-->
-            <!--<li><a id="nosotros" href="nosotros.html">NOSOTROS</a></li>-->
-            <!--<li><a id="contacto" href=contacto.html">CONTACTO</a></li>-->
-        <!--</ul>-->
-        <!--<ul style="width: auto" class="side-nav" id="mobile">-->
-            <!--<li><a href="#">INICIO</a></li>-->
-            <!--<li><a href="#PRODUCTOS">EQUIPO</a></li>-->
-            <!--<li><a href="paquetes.html">SERVICIOS</a></li>-->
-            <!--<li><a href="nosotros.html">NOSOTROS</a></li>-->
-            <!--<li><a href="contacto.html">CONTACTO</a></li>-->
-        <!--</ul>-->
-    <!--</div>-->
 </nav>
 <nav id="sidenav-overlay" class="navbar-default hide-on-small-only hide-on-med-only #fb8c00 orange darken-1" style="height: 60px;">
     <div class="nav-wrapper" >
-        <a href="#!" class="brand-logo"><img style=" width: 20%; z-index: 0; padding-left: 30px;"  src="img/logo%201-05.png"></a>
+        <a href="#!" class="brand-logo"><img style=" width: 220px; z-index: 0; padding-left: 30px;"  src="img/logo%201-05.png"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down" style="z-index: 996;">
-            <li><a href="#">INICIO</a></li>
+            <li><a href="index.html">INICIO</a></li>
             <li><a href="#PRODUCTOS">EQUIPO</a></li>
             <li><a href="paquetes.html">SERVICIOS</a></li>
             <li><a href="nosotros.html">NOSOTROS</a></li>
-            <li><a href=contacto.html">CONTACTO</a></li>
+            <li><a href="contacto.html">CONTACTO</a></li>
         </ul>
     </div>
 </nav>
@@ -166,7 +142,6 @@
                     <li><a id="nosotros-btn" href="nosotros.html">NOSOTROS</a></li>
                     <li><a id="contacto-btn" href="contacto.html">CONTACTO</a></li>
                 </ul>
-
             </div>
         </nav>
     </div>
@@ -190,7 +165,7 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text"><img style="width: 50%" src="img/logo%201-05.png"></h5>
+                <h5 class="white-text"><img style="width: 240px" src="img/logo%201-05.png"></h5>
                 <p class="grey-text text-lighten-4">Somos una empresa dedicada a la animación de las fiestas infantiles con un equipo dinámico, creativo y bien preparado para divertir y entretener a niños de todas las edades.
                     Vamos a salones, casas particulares, jardines y animamos tu fiesta.</p>
             </div>
